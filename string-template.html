@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String Template</title>
+  </head>
+  <body>
+    <script>
+      const name = "Andri Raharjo";
+      const template = `Name: ${name}`;
+      console.info(template);
+
+      const nilai = 90;
+      const template2 = `Name : ${name}, Lulus : ${nilai > 70}`;
+      console.info(template2);
+
+      const multiLineString = `
+      Lorem ipsum dolor sit amet, 
+      consectetur adipiscing elit. 
+      Sed sagittis, velit sed sagittis`;
+
+      document.writeln("<pre>");
+      document.writeln(multiLineString);
+      document.writeln("</pre>");
+    </script>
+  </body>
+</html>
