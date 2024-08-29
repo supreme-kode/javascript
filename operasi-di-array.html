@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operasi di Array</title>
+</head>
+<body>
+    <script>
+        const names = [];
+        names.push("Eppy");
+        names.push("Viana", "Surya");
+
+        console.table(names);
+
+        names[0] = "Evi";
+        
+        console.table(names);
+        console.info(names.length);
+        console.info(names[0]);
+        console.info(names[1]);
+        console.info(names[2]);
+
+        //menghapus data array
+        delete names[2]; //value hilang namun indexnya tidak dihapus
+
+        console.table(names);
+
+        // tambah data array
+        names.push("Surya");
+        console.table(names);
+    </script>
+</body>
+</html>
