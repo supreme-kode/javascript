@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipe Data Object</title>
+</head>
+<body>
+    <script>
+        const orang = {};
+
+        // Menambah atau mengubah
+        orang["nama"] = "Andri Raharjo";
+        orang["alamat"] = "Indonesia";
+        orang["umur"] = 43;
+
+        console.table(orang);
+        // Menghapus
+        delete orang["umur"];
+
+        console.table(orang);
+
+        // Membuat object dengan literal
+        const person = {
+            nama: "Andri Raharjo",
+            "alamat lengkap": "Indonesia - Sumatera",
+            umur: 43,
+        };
+
+        console.table(person);
+
+        // Mengakses data object
+        console.info(`${orang.nama}`);
+        console.log(`${person["alamat lengkap"]}`);
+    </script>
+</body>
+</html>
