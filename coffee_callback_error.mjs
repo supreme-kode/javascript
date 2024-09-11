@@ -1,4 +1,4 @@
-function makeCoffee(name, callback) {
+function makeCoffee(name, apaAja) {
   const estimationTime = 5_000;
   let isSuccess = false;
 
@@ -14,16 +14,16 @@ function makeCoffee(name, callback) {
     }
 
     if (!isSuccess) {
-      callback(new Error("Gagal membuat kopi."), null);
+      apaAja(new Error("Gagal membuat kopi."), null);
       return;
     }
 
     console.log("Pramusaji selesai membuat kopi.");
-    callback(null, name);
+    apaAja(null, name);
   }, estimationTime);
 }
 
-function sendCoffee(name, callback) {
+function sendCoffee(name, apaAja) {
   const estimationTime = 2_000;
   let isSuccess = false;
 
@@ -34,12 +34,12 @@ function sendCoffee(name, callback) {
       isSuccess = true;
     }
     if (!isSuccess) {
-      callback(new Error("Gagal mengantarkan kopi."), null);
+      apaAja(new Error("Gagal mengantarkan kopi."), null);
       return;
     }
 
     console.log("Pramusaji sudah sampai ke meja");
-    callback(name, null);
+    apaAja(null, name);
   }, estimationTime);
 }
 
