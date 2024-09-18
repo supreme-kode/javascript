@@ -154,3 +154,108 @@
 // }, 3_000);
 
 // console.log("Bakal muncul kedua");
+
+// setTimeout(() => {
+//   document.body.style.backgroundColor = "red";
+//   setTimeout(() => {
+//     document.body.style.backgroundColor = "yellow";
+//     setTimeout(() => {
+//       document.body.style.backgroundColor = "green";
+//       setTimeout(() => {
+//         document.body.style.backgroundColor = "blue";
+//       }, 1_000);
+//     }, 1_000);
+//   }, 1_000);
+// }, 1_000);
+
+// Callback version
+// const requestCallback = (url, success, failure) => {
+//   const delay = Math.floor(Math.random() * 4500) + 500;
+//   setTimeout(() => {
+//     if (delay > 4_000) {
+//       failure("Error: Connection Timeout");
+//     } else {
+//       success(`Success: ${url} (${delay}ms) `);
+//     }
+//   }, delay);
+// };
+
+// requestCallback(
+//   "google.com",
+//   (a) => console.log(a),
+//   (b) => console.log(b)
+// );
+
+// Promise Version
+const requestPromise = (url) => {
+  return new Promise((resolve, reject) => {
+    const delay = Math.floor(Math.random() * 4500) + 500;
+    setTimeout(() => {
+      if (delay > 4000) {
+        reject("Error: Connection Timeout");
+      } else {
+        resolve(`Success: ${url} (${delay}ms)`);
+      }
+    }, delay);
+  });
+};
+
+// requestPromise("google.com")
+//   .then(() => {
+//     console.log("Page 1");
+//     requestPromise("google.com");
+//   })
+//   .then(() => {
+//     console.log("Page 2");
+//     requestPromise("google.com");
+//   })
+//   .then(() => {
+//     console.log("Page 3");
+//     requestPromise("google.com");
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
+
+// const delayColorChange = (color, delay) => {
+//   return new Promise((berhasil, gagal) => {
+//     setTimeout(() => {
+//       document.body.style.backgroundColor = color;
+//       berhasil();
+//     }, delay);
+//   });
+// };
+
+// delayColorChange("red", 1000)
+//   .then(() => delayColorChange("yellow", 1000))
+//   .then(() => delayColorChange("green", 1000))
+//   .then(() => delayColorChange("blue", 1000))
+//   .then(() => delayColorChange("purple", 1000));
+
+// async function colorChange() {
+//   await delayColorChange("red", 1000);
+//   await delayColorChange("yellow", 1000);
+//   await delayColorChange("green", 1000);
+//   await delayColorChange("blue", 1000);
+//   await delayColorChange("purple", 1000);
+//   return "All Done";
+// }
+
+// colorChange().then((respone) => {
+//   alert(respone);
+//   console.log(respone);
+// });
+
+// async function printRainbow() {
+//   await colorChange();
+//   console.log("All Done!");
+// }
+
+async function requestHandler() {
+  try {
+    let result = await requestPromise("google.com");
+    console.log("Hello");
+  } catch (error) {
+    console.log("Pesan", error);
+  }
+}
