@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JQuery</title>
+    <style>
+      .merah {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Kemana kamu ingin pergi</h1>
+    <ul class="lokasi">
+      <li class="bandung">
+        Bandung
+        <button id="kebandung">Pergi<button id="hideBandung">H</button></button
+        ><button id="hapusBandung">X</button>
+      </li>
+      <li class="surabaya"><strong>Surabaya</strong></li>
+      <li class="jakarta">Jakarta</li>
+      <li><input type="text" class="inputan" value="100" name="" id="" /></li>
+    </ul>
+    <script
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    ></script>
+    <script src="../JQuery/app.js"></script>
+    <script>
+      $(document).ready(function () {
+        // let jogja = $("<li>Yogyakarta</li>");
+        // const bali = $("<li>Bali</li>");
+        // $(".lokasi").prepend(jogja);
+        // $(".lokasi").append(bali);
+        // const tujuan = $("<h2>Pilih Destinasimu sekarang juga</h2>");
+        // $(".lokasi").before(tujuan);
+        // console.log($(".surabaya").text());
+        // console.log($(".surabaya").html());
+        // console.log($(".inputan").val());
+        // $(".bandung").text("Wonosobo");
+        // $(".jakarta").remove();
+        // $(".jakarta").empty();
+        // $("#kebandung").on("click", function () {
+        //   alert("Saya suka ke Bandung!");
+        // });
+        $("#hapusBandung").on("click", () => {
+          $(".bandung").remove();
+        });
+        $("#hideBandung").on("click", () => {
+          $(".bandung").fadeOut(2000);
+        });
+
+      });
+    </script>
+  </body>
+</html>
